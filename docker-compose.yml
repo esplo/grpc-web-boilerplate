@@ -1,0 +1,41 @@
+version: '3.4'
+
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    volumes:
+      - ./server:/app
+      - ivy-cache:/root/.ivy2
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+      - web-proxy
+
+  web-proxy:
+    image: esplo/docker-grpc-web-proxy
+    ports:
+      - "8443:8443"
+      - "8080:8080"
+    depends_on:
+      - server
+      
+  converter:
+    image: esplo/docker-protobuf-ts-converter
+    volumes:
+      - ./server/app/src/main/protobuf:/src
+      - ./frontend/src/protobuf:/dist
+    environment:
+      - SHELL=/bin/sh
+
+volumes:
+  ivy-cache:

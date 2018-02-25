@@ -1,0 +1,35 @@
+{
+    "defaultSeverity": "warning",
+    "rulesDirectory": ["tslint-plugin-prettier"],
+    "extends": [
+        "tslint:latest",
+        "tslint:recommended",
+        "tslint-react",
+        "tslint-config-prettier"
+    ],
+    "rules": {
+        "jsx-alignment": true,
+        "jsx-no-lambda": true,
+        "object-literal-sort-keys": false,
+        "no-require-imports": false,
+        "no-console": false,
+        "arrow-return-shorthand": [
+            true,
+            "multiline"
+        ],
+        "no-empty-interface": false,
+        "prettier": [
+            true,
+            {
+                "trailingComma": "all",
+                "tabWidth": 2,
+                "bracketSpacing": true
+            }
+        ]
+    },
+    "linterOptions": {
+        "exclude": [
+            "/app/src/protobuf/**"
+        ]
+    }
+}
