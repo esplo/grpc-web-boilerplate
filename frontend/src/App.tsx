@@ -1,12 +1,13 @@
 import * as React from "react";
 import "./App.css";
 
-import { Code, grpc } from "grpc-web-client";
+import { grpc } from "grpc-web-client";
 import { HelloReply, HelloRequest } from "./protobuf/hello_pb";
 import { Greeter } from "./protobuf/hello_pb_service";
 
 import * as logo from "./logo.svg";
 import UnaryOutput = grpc.UnaryOutput;
+import Code = grpc.Code;
 
 const host = "http://localhost:8080";
 
