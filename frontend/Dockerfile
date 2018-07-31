@@ -1,4 +1,4 @@
-FROM node:9.5.0
+FROM node:10.7-alpine
 LABEL maintainer="esplo@users.noreply.github.com"
 
 WORKDIR /app
