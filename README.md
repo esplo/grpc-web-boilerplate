@@ -42,8 +42,8 @@ wait until the server is ready, then access to `http://localhost:3000`
 |       └── scala/example
 |           └── Hello.scala
 |-- frontend  # ref. https://github.com/wmonk/create-react-app-typescript
-|   └── src
-|       └── protobuf  # store auto-generated codes
-|       └── App.tsx
+    └── src
+        └── protobuf  # store auto-generated codes
+        └── App.tsx
 ```
 
